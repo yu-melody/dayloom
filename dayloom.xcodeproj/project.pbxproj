@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0104136F2CE140BA00C8E541 /* AddNewEntryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0104136E2CE140BA00C8E541 /* AddNewEntryScreen.swift */; };
+		010413712CE140EA00C8E541 /* ViewPastEntriesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010413702CE140EA00C8E541 /* ViewPastEntriesScreen.swift */; };
+		010413732CE140F500C8E541 /* SynthesizeJournalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010413722CE140F500C8E541 /* SynthesizeJournalScreen.swift */; };
 		0174B3BC2CDFBA030069AB39 /* dayloomApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0174B3BB2CDFBA030069AB39 /* dayloomApp.swift */; };
 		0174B3BE2CDFBA030069AB39 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0174B3BD2CDFBA030069AB39 /* ContentView.swift */; };
 		0174B3C02CDFBA050069AB39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0174B3BF2CDFBA050069AB39 /* Assets.xcassets */; };
@@ -14,6 +17,9 @@
 		0174B3CD2CDFBA050069AB39 /* dayloomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0174B3CC2CDFBA050069AB39 /* dayloomTests.swift */; };
 		0174B3D72CDFBA050069AB39 /* dayloomUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0174B3D62CDFBA050069AB39 /* dayloomUITests.swift */; };
 		0174B3D92CDFBA050069AB39 /* dayloomUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0174B3D82CDFBA050069AB39 /* dayloomUITestsLaunchTests.swift */; };
+		0174B3EE2CDFBD850069AB39 /* GratitudeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0174B3ED2CDFBD850069AB39 /* GratitudeScreen.swift */; };
+		0174B3F02CDFBD930069AB39 /* RoutineScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0174B3EF2CDFBD930069AB39 /* RoutineScreen.swift */; };
+		0174B3F32CDFBDAC0069AB39 /* DeviceScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0174B3F22CDFBDAC0069AB39 /* DeviceScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0104136E2CE140BA00C8E541 /* AddNewEntryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewEntryScreen.swift; sourceTree = "<group>"; };
+		010413702CE140EA00C8E541 /* ViewPastEntriesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPastEntriesScreen.swift; sourceTree = "<group>"; };
+		010413722CE140F500C8E541 /* SynthesizeJournalScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynthesizeJournalScreen.swift; sourceTree = "<group>"; };
 		0174B3B82CDFBA030069AB39 /* dayloom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dayloom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0174B3BB2CDFBA030069AB39 /* dayloomApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dayloomApp.swift; sourceTree = "<group>"; };
 		0174B3BD2CDFBA030069AB39 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +53,9 @@
 		0174B3D22CDFBA050069AB39 /* dayloomUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dayloomUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0174B3D62CDFBA050069AB39 /* dayloomUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dayloomUITests.swift; sourceTree = "<group>"; };
 		0174B3D82CDFBA050069AB39 /* dayloomUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dayloomUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0174B3ED2CDFBD850069AB39 /* GratitudeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeScreen.swift; sourceTree = "<group>"; };
+		0174B3EF2CDFBD930069AB39 /* RoutineScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineScreen.swift; sourceTree = "<group>"; };
+		0174B3F22CDFBDAC0069AB39 /* DeviceScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +106,10 @@
 		0174B3BA2CDFBA030069AB39 /* dayloom */ = {
 			isa = PBXGroup;
 			children = (
+				0174B3E82CDFBB1E0069AB39 /* Helpers */,
+				0174B3E72CDFBB170069AB39 /* Resources */,
+				0174B3E62CDFBAF50069AB39 /* Models */,
+				0174B3E52CDFBAED0069AB39 /* Views */,
 				0174B3BB2CDFBA030069AB39 /* dayloomApp.swift */,
 				0174B3BD2CDFBA030069AB39 /* ContentView.swift */,
 				0174B3BF2CDFBA050069AB39 /* Assets.xcassets */,
@@ -125,6 +141,40 @@
 				0174B3D82CDFBA050069AB39 /* dayloomUITestsLaunchTests.swift */,
 			);
 			path = dayloomUITests;
+			sourceTree = "<group>";
+		};
+		0174B3E52CDFBAED0069AB39 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0174B3ED2CDFBD850069AB39 /* GratitudeScreen.swift */,
+				0174B3EF2CDFBD930069AB39 /* RoutineScreen.swift */,
+				0174B3F22CDFBDAC0069AB39 /* DeviceScreen.swift */,
+				0104136E2CE140BA00C8E541 /* AddNewEntryScreen.swift */,
+				010413702CE140EA00C8E541 /* ViewPastEntriesScreen.swift */,
+				010413722CE140F500C8E541 /* SynthesizeJournalScreen.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0174B3E62CDFBAF50069AB39 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0174B3E72CDFBB170069AB39 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0174B3E82CDFBB1E0069AB39 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +308,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0174B3BE2CDFBA030069AB39 /* ContentView.swift in Sources */,
+				010413732CE140F500C8E541 /* SynthesizeJournalScreen.swift in Sources */,
+				0104136F2CE140BA00C8E541 /* AddNewEntryScreen.swift in Sources */,
+				010413712CE140EA00C8E541 /* ViewPastEntriesScreen.swift in Sources */,
+				0174B3EE2CDFBD850069AB39 /* GratitudeScreen.swift in Sources */,
 				0174B3BC2CDFBA030069AB39 /* dayloomApp.swift in Sources */,
+				0174B3F32CDFBDAC0069AB39 /* DeviceScreen.swift in Sources */,
+				0174B3F02CDFBD930069AB39 /* RoutineScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +481,7 @@
 				DEVELOPMENT_TEAM = B49LQ49UB7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = dayloom;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -454,6 +511,7 @@
 				DEVELOPMENT_TEAM = B49LQ49UB7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = dayloom;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
