@@ -2,7 +2,7 @@ import SwiftUI
 
 struct GratitudeCardView: View {
     @State private var isEditing = false  // Local state to control sheet presentation
-    @Binding var entry: GratitudeEntry  // Binding to the gratitude entry for in-place editing
+    @Binding var entry: GratitudeEntryModel  // Binding to the gratitude entry for in-place editing
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {

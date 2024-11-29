@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SynthesizeJournalScreen: View {
-    let entries: [GratitudeEntry]
+    let entries: [GratitudeEntryModel]
     
     // Concatenate all entries into a single block of text
     private var concatenatedEntries: String {

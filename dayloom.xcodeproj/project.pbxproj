@@ -3,16 +3,27 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0104136F2CE140BA00C8E541 /* AddNewEntryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0104136E2CE140BA00C8E541 /* AddNewEntryScreen.swift */; };
-		010413712CE140EA00C8E541 /* ViewPastEntriesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010413702CE140EA00C8E541 /* ViewPastEntriesScreen.swift */; };
 		010413732CE140F500C8E541 /* SynthesizeJournalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010413722CE140F500C8E541 /* SynthesizeJournalScreen.swift */; };
+		010413782CE1485200C8E541 /* EntriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010413772CE1485200C8E541 /* EntriesViewModel.swift */; };
+		0104137A2CE14B8900C8E541 /* ViewPastEntriesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010413792CE14B8900C8E541 /* ViewPastEntriesScreen.swift */; };
+		0104137E2CE15C4F00C8E541 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0104137D2CE15C4F00C8E541 /* UIApplication+Extensions.swift */; };
+		010413872CE1620600C8E541 /* GratitudeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010413862CE1620600C8E541 /* GratitudeCardView.swift */; };
+		0104138A2CE2963400C8E541 /* EditEntryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010413892CE2963400C8E541 /* EditEntryScreen.swift */; };
+		0116B7F32CF533D4007E25D0 /* RoutineCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0116B7F22CF533D4007E25D0 /* RoutineCard.swift */; };
+		0116B7F72CF5346B007E25D0 /* RoutineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0116B7F62CF5346B007E25D0 /* RoutineViewModel.swift */; };
+		0116B7F92CF53795007E25D0 /* RoutineListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0116B7F82CF53795007E25D0 /* RoutineListViewModel.swift */; };
+		0116B7FB2CF537BC007E25D0 /* RoutineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0116B7FA2CF537BC007E25D0 /* RoutineModel.swift */; };
+		0116B7FF2CF687D5007E25D0 /* GratitudeEntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0116B7FE2CF687D5007E25D0 /* GratitudeEntryModel.swift */; };
+		0170898E2CF6AE000000179C /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0170898D2CF6AE000000179C /* NavigationButton.swift */; };
+		017089942CF6AEEB0000179C /* TitleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017089932CF6AEEB0000179C /* TitleText.swift */; };
+		017089962CF6B5850000179C /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017089952CF6B5850000179C /* ActionButton.swift */; };
 		0174B3BC2CDFBA030069AB39 /* dayloomApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0174B3BB2CDFBA030069AB39 /* dayloomApp.swift */; };
 		0174B3BE2CDFBA030069AB39 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0174B3BD2CDFBA030069AB39 /* ContentView.swift */; };
-		0174B3C02CDFBA050069AB39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0174B3BF2CDFBA050069AB39 /* Assets.xcassets */; };
 		0174B3C32CDFBA050069AB39 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0174B3C22CDFBA050069AB39 /* Preview Assets.xcassets */; };
 		0174B3CD2CDFBA050069AB39 /* dayloomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0174B3CC2CDFBA050069AB39 /* dayloomTests.swift */; };
 		0174B3D72CDFBA050069AB39 /* dayloomUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0174B3D62CDFBA050069AB39 /* dayloomUITests.swift */; };
@@ -20,6 +31,9 @@
 		0174B3EE2CDFBD850069AB39 /* GratitudeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0174B3ED2CDFBD850069AB39 /* GratitudeScreen.swift */; };
 		0174B3F02CDFBD930069AB39 /* RoutineScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0174B3EF2CDFBD930069AB39 /* RoutineScreen.swift */; };
 		0174B3F32CDFBDAC0069AB39 /* DeviceScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0174B3F22CDFBDAC0069AB39 /* DeviceScreen.swift */; };
+		01E9496D2CF8F60C00FEE375 /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E9496C2CF8F60C00FEE375 /* DeviceModel.swift */; };
+		01E9496F2CF8F62C00FEE375 /* DevicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E9496E2CF8F62C00FEE375 /* DevicesViewModel.swift */; };
+		01E949712CFA152D00FEE375 /* RoutineDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E949702CFA152D00FEE375 /* RoutineDetailScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,12 +55,23 @@
 
 /* Begin PBXFileReference section */
 		0104136E2CE140BA00C8E541 /* AddNewEntryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewEntryScreen.swift; sourceTree = "<group>"; };
-		010413702CE140EA00C8E541 /* ViewPastEntriesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPastEntriesScreen.swift; sourceTree = "<group>"; };
 		010413722CE140F500C8E541 /* SynthesizeJournalScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynthesizeJournalScreen.swift; sourceTree = "<group>"; };
+		010413772CE1485200C8E541 /* EntriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesViewModel.swift; sourceTree = "<group>"; };
+		010413792CE14B8900C8E541 /* ViewPastEntriesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPastEntriesScreen.swift; sourceTree = "<group>"; };
+		0104137D2CE15C4F00C8E541 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
+		010413862CE1620600C8E541 /* GratitudeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeCardView.swift; sourceTree = "<group>"; };
+		010413892CE2963400C8E541 /* EditEntryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEntryScreen.swift; sourceTree = "<group>"; };
+		0116B7F22CF533D4007E25D0 /* RoutineCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineCard.swift; sourceTree = "<group>"; };
+		0116B7F62CF5346B007E25D0 /* RoutineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineViewModel.swift; sourceTree = "<group>"; };
+		0116B7F82CF53795007E25D0 /* RoutineListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineListViewModel.swift; sourceTree = "<group>"; };
+		0116B7FA2CF537BC007E25D0 /* RoutineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineModel.swift; sourceTree = "<group>"; };
+		0116B7FE2CF687D5007E25D0 /* GratitudeEntryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeEntryModel.swift; sourceTree = "<group>"; };
+		0170898D2CF6AE000000179C /* NavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
+		017089932CF6AEEB0000179C /* TitleText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleText.swift; sourceTree = "<group>"; };
+		017089952CF6B5850000179C /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		0174B3B82CDFBA030069AB39 /* dayloom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dayloom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0174B3BB2CDFBA030069AB39 /* dayloomApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dayloomApp.swift; sourceTree = "<group>"; };
 		0174B3BD2CDFBA030069AB39 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		0174B3BF2CDFBA050069AB39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0174B3C22CDFBA050069AB39 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0174B3C82CDFBA050069AB39 /* dayloomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dayloomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0174B3CC2CDFBA050069AB39 /* dayloomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dayloomTests.swift; sourceTree = "<group>"; };
@@ -56,7 +81,14 @@
 		0174B3ED2CDFBD850069AB39 /* GratitudeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeScreen.swift; sourceTree = "<group>"; };
 		0174B3EF2CDFBD930069AB39 /* RoutineScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineScreen.swift; sourceTree = "<group>"; };
 		0174B3F22CDFBDAC0069AB39 /* DeviceScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceScreen.swift; sourceTree = "<group>"; };
+		01E9496C2CF8F60C00FEE375 /* DeviceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceModel.swift; sourceTree = "<group>"; };
+		01E9496E2CF8F62C00FEE375 /* DevicesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesViewModel.swift; sourceTree = "<group>"; };
+		01E949702CFA152D00FEE375 /* RoutineDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDetailScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		017089992CF6BF470000179C /* Supporting Files */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Supporting Files"; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		0174B3B52CDFBA020069AB39 /* Frameworks */ = {
@@ -83,6 +115,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		010413762CE1482600C8E541 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				01E9496E2CF8F62C00FEE375 /* DevicesViewModel.swift */,
+				010413772CE1485200C8E541 /* EntriesViewModel.swift */,
+				0116B7F62CF5346B007E25D0 /* RoutineViewModel.swift */,
+				0116B7F82CF53795007E25D0 /* RoutineListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		010413852CE161E000C8E541 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				017089932CF6AEEB0000179C /* TitleText.swift */,
+				010413862CE1620600C8E541 /* GratitudeCardView.swift */,
+				0116B7F22CF533D4007E25D0 /* RoutineCard.swift */,
+				0170898D2CF6AE000000179C /* NavigationButton.swift */,
+				017089952CF6B5850000179C /* ActionButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		0174B3AF2CDFBA020069AB39 = {
 			isa = PBXGroup;
 			children = (
@@ -106,14 +161,17 @@
 		0174B3BA2CDFBA030069AB39 /* dayloom */ = {
 			isa = PBXGroup;
 			children = (
+				010413852CE161E000C8E541 /* Components */,
+				010413762CE1482600C8E541 /* ViewModels */,
 				0174B3E82CDFBB1E0069AB39 /* Helpers */,
 				0174B3E72CDFBB170069AB39 /* Resources */,
 				0174B3E62CDFBAF50069AB39 /* Models */,
 				0174B3E52CDFBAED0069AB39 /* Views */,
+				017089992CF6BF470000179C /* Supporting Files */,
 				0174B3BB2CDFBA030069AB39 /* dayloomApp.swift */,
 				0174B3BD2CDFBA030069AB39 /* ContentView.swift */,
-				0174B3BF2CDFBA050069AB39 /* Assets.xcassets */,
 				0174B3C12CDFBA050069AB39 /* Preview Content */,
+				0104137D2CE15C4F00C8E541 /* UIApplication+Extensions.swift */,
 			);
 			path = dayloom;
 			sourceTree = "<group>";
@@ -146,12 +204,14 @@
 		0174B3E52CDFBAED0069AB39 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				01E949702CFA152D00FEE375 /* RoutineDetailScreen.swift */,
 				0174B3ED2CDFBD850069AB39 /* GratitudeScreen.swift */,
 				0174B3EF2CDFBD930069AB39 /* RoutineScreen.swift */,
 				0174B3F22CDFBDAC0069AB39 /* DeviceScreen.swift */,
 				0104136E2CE140BA00C8E541 /* AddNewEntryScreen.swift */,
-				010413702CE140EA00C8E541 /* ViewPastEntriesScreen.swift */,
 				010413722CE140F500C8E541 /* SynthesizeJournalScreen.swift */,
+				010413792CE14B8900C8E541 /* ViewPastEntriesScreen.swift */,
+				010413892CE2963400C8E541 /* EditEntryScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -159,6 +219,9 @@
 		0174B3E62CDFBAF50069AB39 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				01E9496C2CF8F60C00FEE375 /* DeviceModel.swift */,
+				0116B7FA2CF537BC007E25D0 /* RoutineModel.swift */,
+				0116B7FE2CF687D5007E25D0 /* GratitudeEntryModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -191,6 +254,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				017089992CF6BF470000179C /* Supporting Files */,
 			);
 			name = dayloom;
 			productName = dayloom;
@@ -282,7 +348,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0174B3C32CDFBA050069AB39 /* Preview Assets.xcassets in Resources */,
-				0174B3C02CDFBA050069AB39 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,14 +372,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0104137E2CE15C4F00C8E541 /* UIApplication+Extensions.swift in Sources */,
+				010413872CE1620600C8E541 /* GratitudeCardView.swift in Sources */,
+				01E9496D2CF8F60C00FEE375 /* DeviceModel.swift in Sources */,
 				0174B3BE2CDFBA030069AB39 /* ContentView.swift in Sources */,
+				0116B7F72CF5346B007E25D0 /* RoutineViewModel.swift in Sources */,
+				0116B7FF2CF687D5007E25D0 /* GratitudeEntryModel.swift in Sources */,
+				0116B7FB2CF537BC007E25D0 /* RoutineModel.swift in Sources */,
+				0116B7F92CF53795007E25D0 /* RoutineListViewModel.swift in Sources */,
+				01E9496F2CF8F62C00FEE375 /* DevicesViewModel.swift in Sources */,
 				010413732CE140F500C8E541 /* SynthesizeJournalScreen.swift in Sources */,
+				0116B7F32CF533D4007E25D0 /* RoutineCard.swift in Sources */,
+				017089942CF6AEEB0000179C /* TitleText.swift in Sources */,
+				0104138A2CE2963400C8E541 /* EditEntryScreen.swift in Sources */,
 				0104136F2CE140BA00C8E541 /* AddNewEntryScreen.swift in Sources */,
-				010413712CE140EA00C8E541 /* ViewPastEntriesScreen.swift in Sources */,
+				0170898E2CF6AE000000179C /* NavigationButton.swift in Sources */,
+				0104137A2CE14B8900C8E541 /* ViewPastEntriesScreen.swift in Sources */,
 				0174B3EE2CDFBD850069AB39 /* GratitudeScreen.swift in Sources */,
 				0174B3BC2CDFBA030069AB39 /* dayloomApp.swift in Sources */,
 				0174B3F32CDFBDAC0069AB39 /* DeviceScreen.swift in Sources */,
+				010413782CE1485200C8E541 /* EntriesViewModel.swift in Sources */,
+				01E949712CFA152D00FEE375 /* RoutineDetailScreen.swift in Sources */,
 				0174B3F02CDFBD930069AB39 /* RoutineScreen.swift in Sources */,
+				017089962CF6B5850000179C /* ActionButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +555,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"dayloom/Preview Content\"";
@@ -485,6 +566,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -505,6 +587,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"dayloom/Preview Content\"";
@@ -515,6 +598,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

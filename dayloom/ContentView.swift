@@ -1,52 +1,22 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var viewModel: EntriesViewModel  // Ensure this is EnvironmentObject
-
     var body: some View {
         NavigationView {
             VStack(spacing: 24) { // Add consistent spacing
                 // Title
-                Text("Welcome to dayloom")
-                    .font(.system(size: 34, weight: .bold, design: .serif))
-                    .foregroundColor(Color("EarthyTitleColor"))
-                    .padding(.top, 32) // Add top padding for spacing
+                TitleText(text: "Welcome to dayloom")
                 
-                Spacer()
+                Image("dayloom-transparent")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 150, height: 150) // Adjust size as needed
+                                    .padding(.top, 40) // Add padding to the top
+                
                 // Navigation Buttons
-                NavigationLink(destination: GratitudeScreen()) {
-                    Text("Gratitude Journal")
-                        .font(.headline)
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color("EarthyAccentColor"))
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
-                .padding(.horizontal)
-
-                NavigationLink(destination: DeviceScreen()) {
-                    Text("Devices")
-                        .font(.headline)
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color("EarthyAccentColor"))
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
-                .padding(.horizontal)
-
-                NavigationLink(destination: RoutineScreen()) {
-                    Text("Routines")
-                        .font(.headline)
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color("EarthyAccentColor"))
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
-                .padding(.horizontal)
-
+                NavigationButton(title: "Gratitude Journal", destination: AnyView(GratitudeScreen()))
+                NavigationButton(title: "Devices", destination: AnyView(DeviceScreen()))
+                NavigationButton(title: "Routines", destination: AnyView(RoutineScreen()))
                 Spacer() // Push content up
             }
             .padding(.bottom) // Add bottom padding for better spacing

@@ -3,16 +3,13 @@ import SwiftUI
 struct GratitudeScreen: View {
     @EnvironmentObject var viewModel: EntriesViewModel
     @State private var showAllEntries = false  // Controls navigation to all entries
-    @State private var selectedEntry: GratitudeEntry? = nil
+    @State private var selectedEntry: GratitudeEntryModel? = nil
     @State private var refreshTrigger = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             // Title
-            Text("Gratitude Journal")
-                .font(.system(size: 34, weight: .bold, design: .serif))
-                .foregroundColor(Color("EarthyTitleColor"))
-                .padding([.top, .leading])
+            TitleText(text: "Gratitude Journal")
             
             
             Divider()
@@ -32,42 +29,19 @@ struct GratitudeScreen: View {
                     GratitudeCardView(entry: $viewModel.entries[index])  // Pass binding using index
                         .padding(.horizontal)
                 }
-
                 
                 // "View All Entries" Button
-                NavigationLink(destination: ViewPastEntriesScreen()) {
-                    Text("View All Entries")
-                        .font(.headline)
-                        .foregroundColor(Color("EarthyAccentColor"))
-                        .padding(.vertical, 10)
-                        .frame(maxWidth: .infinity)
-                }
+                NavigationButton(title: "View All Entries", destination: AnyView(ViewPastEntriesScreen()))
             }
             
             Spacer()
             
             // "Synthesize Journal" Button
-            NavigationLink(destination: SynthesizeJournalScreen(entries: viewModel.entries)) {
-                Text("Synthesize Journal")
-                    .font(.headline)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color("EarthyAccentColor"))
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-            }
+            NavigationButton(title: "Synthesize Journal", destination: AnyView(SynthesizeJournalScreen(entries: viewModel.entries)))
             .padding(.horizontal)
             
             // Add New Entry button with softer tones and rounded edges
-            NavigationLink(destination: AddNewEntryScreen()) {
-                Text("Add New Entry")
-                    .font(.headline)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color("EarthyAccentColor"))
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-            }
+            NavigationButton(title: "Add New Entry", destination: AnyView(AddNewEntryScreen()))
             .padding(.horizontal)
         }
         .background(Color("EarthyBackground").edgesIgnoringSafeArea(.all))  // Earthy background color

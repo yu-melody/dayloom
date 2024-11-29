@@ -5,40 +5,58 @@
 //  Created by Melody Yu on 11/10/24.
 //
 
-import SwiftUI
-
-class GratitudeEntry: Identifiable, ObservableObject {
-    let id = UUID()
-    @Published var text: String
-    let date: Date
-
-    init(text: String, date: Date) {
-        self.text = text
-        self.date = date
-    }
-}
-
+import Foundation
 
 class EntriesViewModel: ObservableObject {
-    @Published var entries: [GratitudeEntry] = []
+    @Published var entries: [GratitudeEntryModel] = []
 
-    func addEntry(_ text: String) {
-        let newEntry = GratitudeEntry(text: text, date: Date())
-        entries.append(newEntry)
+    private let entriesKey = "GratitudeEntries"
+
+    init() {
+        loadEntries() // Load entries when the app starts
     }
-    
-    // Update entry function
+
+    // Add a new entry
+    func addEntry(_ text: String) {
+        let newEntry = GratitudeEntryModel(id: UUID(), text: text, date: Date())
+        entries.append(newEntry)
+        saveEntries()
+    }
+
+    // Update an existing entry
     func updateEntry(id: UUID, text: String) {
-            if let index = entries.firstIndex(where: { $0.id == id }) {
-                entries[index].text = text
-                print("Updated entry at index \(index) with text: \(text)")
-            }
+        if let index = entries.firstIndex(where: { $0.id == id }) {
+            entries[index].text = text
+            saveEntries()
         }
-    
-    // Deletes the entry
+    }
+
+    // Delete an entry
     func deleteEntry(id: UUID) {
-        entries.removeAll { $0.id == id }  // Remove entry with matching ID
+        entries.removeAll { $0.id == id }
+        saveEntries()
+    }
+
+    // Save entries to UserDefaults
+    private func saveEntries() {
+        // Replace UserDefaults logic with cloud database logic later
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(entries) {
+            UserDefaults.standard.set(encoded, forKey: entriesKey)
+        }
+    }
+
+    // Load entries from UserDefaults
+    private func loadEntries() {
+        // Replace UserDefaults logic with cloud database logic later
+        let decoder = JSONDecoder()
+        if let savedData = UserDefaults.standard.data(forKey: entriesKey),
+           let decoded = try? decoder.decode([GratitudeEntryModel].self, from: savedData) {
+            entries = decoded
+        }
     }
 }
+
+
 
 

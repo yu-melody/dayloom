@@ -3,13 +3,13 @@ import SwiftUI
 struct AddNewEntryScreen: View {
     @EnvironmentObject var viewModel: EntriesViewModel
     @State private var entryText: String = ""
-
+    
     func saveEntry() {
         viewModel.addEntry(entryText)
         entryText = ""
         UIApplication.shared.endEditing()  // Dismiss the keyboard
     }
-
+    
     var body: some View {
         ZStack {
             // Background color using your theme
@@ -18,7 +18,7 @@ struct AddNewEntryScreen: View {
                 .onTapGesture {
                     UIApplication.shared.endEditing()  // Dismiss the keyboard on tap
                 }
-
+            
             VStack(alignment: .leading, spacing: 20) {
                 // Title
                 Text("Add New Entry")
@@ -27,12 +27,12 @@ struct AddNewEntryScreen: View {
                 
                 Divider()
                     .background(Color("EarthyTitleColor").opacity(0.5))  // Subtle divider color
-
+                
                 // Instruction Text
                 Text("What are you grateful for?")
                     .font(.system(size: 18, weight: .medium, design: .serif))
                     .foregroundColor(Color("EarthyTitleColor").opacity(0.7))
-
+                
                 // TextEditor for User Input
                 TextEditor(text: $entryText)
                     .frame(height: 150)
@@ -40,18 +40,10 @@ struct AddNewEntryScreen: View {
                     .background(Color("EarthyCardBackground"))
                     .cornerRadius(10)
                     .foregroundColor(Color("EarthyTitleColor"))
-
+                
                 // Save Button
-                Button(action: saveEntry) {
-                    Text("Save Entry")
-                        .font(.headline)
-                        .foregroundColor(Color("EarthyBackground"))
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color("EarthyAccentColor"))
-                        .cornerRadius(10)
-                }
-
+                ActionButton(title: "Save Entry", action: saveEntry, backgroundColor: Color("EarthyBackground"), foregroundColor: Color("EarthyAccentColor"))
+                
                 Spacer()
             }
             .padding()

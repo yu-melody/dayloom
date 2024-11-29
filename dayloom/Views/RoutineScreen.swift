@@ -13,10 +13,7 @@ struct RoutineScreen: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             // Title
-            Text("Daily Routines")
-                .font(.system(size: 34, weight: .bold, design: .serif))
-                .foregroundColor(Color("EarthyTitleColor"))
-                .padding([.top, .leading])
+            TitleText(text: "Daily Routines")
 
             Divider()
                 .background(Color("EarthyTitleColor").opacity(0.5)) // Subtle divider color

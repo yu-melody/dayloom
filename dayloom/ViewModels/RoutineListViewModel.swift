@@ -33,9 +33,26 @@ class RoutineListViewModel: ObservableObject {
                 return viewModel
             }
         } else {
+            // Default routines with actions
+            let morningActions = [
+                RoutineAction(id: UUID(), type: .alarm, isEnabled: true),
+                RoutineAction(id: UUID(), type: .light, isEnabled: true),
+                RoutineAction(id: UUID(), type: .kettle, isEnabled: true),
+                RoutineAction(id: UUID(), type: .music, isEnabled: false),
+                RoutineAction(id: UUID(), type: .gratitude, isEnabled: true)
+            ]
+
+            let eveningActions = [
+                RoutineAction(id: UUID(), type: .alarm, isEnabled: false),
+                RoutineAction(id: UUID(), type: .light, isEnabled: true),
+                RoutineAction(id: UUID(), type: .kettle, isEnabled: false),
+                RoutineAction(id: UUID(), type: .music, isEnabled: true),
+                RoutineAction(id: UUID(), type: .gratitude, isEnabled: false)
+            ]
+            
             routines = [
-                RoutineViewModel(routine: RoutineModel(name: "Morning Routine")),
-                RoutineViewModel(routine: RoutineModel(name: "Evening Routine"))
+                RoutineViewModel(routine: RoutineModel(id: UUID(), name: "Morning Routine", time: Date(), isEnabled: true, actions: morningActions)),
+                RoutineViewModel(routine: RoutineModel(id: UUID(), name: "Evening Routine", time: Date(), isEnabled: true, actions: eveningActions))
             ]
 
             // Set up callbacks for defaults
