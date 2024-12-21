@@ -26,3 +26,5 @@ Package.resolved
 .idea/
 
 backend/venv/
+
+backend/config/service-account.json
