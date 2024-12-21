@@ -1,0 +1,6 @@
+cryptography==44.0.0
+fastapi==0.115.5
+firebase-admin==6.6.0
+grpcio-status==1.68.0
+pip-chill==1.0.3
+uvicorn==0.32.1
