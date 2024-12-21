@@ -24,3 +24,5 @@ Package.resolved
 
 # IDE settings
 .idea/
+
+backend/venv/
