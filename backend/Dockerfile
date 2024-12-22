@@ -15,4 +15,4 @@ ENV PORT 8080
 EXPOSE 8080
 
 # Run the FastAPI app using Gunicorn and the expected PORT
-CMD ["gunicorn", "-w", "4", "-k", "uv
+CMD ["gunicorn", "-w", "4", "-k", "uvicorn.workers.UvicornWorker", "main:app", "--bind", "0.0.0.0:8080"]
