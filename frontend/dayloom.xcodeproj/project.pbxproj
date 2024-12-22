@@ -88,6 +88,7 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		017089992CF6BF470000179C /* Supporting Files */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Supporting Files"; sourceTree = "<group>"; };
+		01D4FC5F2D17387700FF9C1E /* Networking */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Networking; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,10 +162,9 @@
 		0174B3BA2CDFBA030069AB39 /* dayloom */ = {
 			isa = PBXGroup;
 			children = (
+				01D4FC5F2D17387700FF9C1E /* Networking */,
 				010413852CE161E000C8E541 /* Components */,
 				010413762CE1482600C8E541 /* ViewModels */,
-				0174B3E82CDFBB1E0069AB39 /* Helpers */,
-				0174B3E72CDFBB170069AB39 /* Resources */,
 				0174B3E62CDFBAF50069AB39 /* Models */,
 				0174B3E52CDFBAED0069AB39 /* Views */,
 				017089992CF6BF470000179C /* Supporting Files */,
@@ -226,20 +226,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		0174B3E72CDFBB170069AB39 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		0174B3E82CDFBB1E0069AB39 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -257,6 +243,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				017089992CF6BF470000179C /* Supporting Files */,
+				01D4FC5F2D17387700FF9C1E /* Networking */,
 			);
 			name = dayloom;
 			productName = dayloom;

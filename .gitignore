@@ -27,4 +27,11 @@ Package.resolved
 
 backend/venv/
 
-backend/config/service-account.json
+backend/config/
+
+.env
+
+__pycache__/
+*.pyc
+__pycache__/
+*.pyc
