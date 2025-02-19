@@ -30,7 +30,7 @@ def get_gratitude_entry(entry_id: UUID):
 def add_gratitude_entry(entry: GratitudeEntry):
     # Set the date to the current UTC time if it's not provided
     if not entry.date:
-        entry.date = datetime.now(datetime.timezone.utc)
+        entry.date = datetime.combine(datetime.utcnow().date())
 
     # Convert UUID to string
     entry_dict = entry.dict(exclude_none=True)

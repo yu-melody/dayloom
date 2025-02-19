@@ -34,6 +34,7 @@ class EntriesViewModel: ObservableObject {
 
     // Add a new entry and save it to the backend
     func addEntry(_ text: String) {
+        print("Date: \(Date())")
         let newEntry = GratitudeEntryModel(id: UUID(), text: text, date: Date())
         networkManager.addEntry(newEntry) { [weak self] success in
             DispatchQueue.main.async {

@@ -42,9 +42,10 @@ class RoutineViewModel: ObservableObject, Identifiable {
     
     
     // Update a specific action
-    func toggleAction(actionId: UUID) {
-        guard let index = actions.firstIndex(where: { $0.id == actionId }) else { return }
+    func toggleAction(actionType: RoutineActionType) {
+        guard let index = actions.firstIndex(where: { $0.type == actionType }) else { return }
         actions[index].isEnabled.toggle()
     }
+
 }
 

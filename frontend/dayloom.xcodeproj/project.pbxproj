@@ -81,6 +81,7 @@
 		0174B3ED2CDFBD850069AB39 /* GratitudeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeScreen.swift; sourceTree = "<group>"; };
 		0174B3EF2CDFBD930069AB39 /* RoutineScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineScreen.swift; sourceTree = "<group>"; };
 		0174B3F22CDFBDAC0069AB39 /* DeviceScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceScreen.swift; sourceTree = "<group>"; };
+		0194B98A2D1B2226009D4427 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		01E9496C2CF8F60C00FEE375 /* DeviceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceModel.swift; sourceTree = "<group>"; };
 		01E9496E2CF8F62C00FEE375 /* DevicesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesViewModel.swift; sourceTree = "<group>"; };
 		01E949702CFA152D00FEE375 /* RoutineDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDetailScreen.swift; sourceTree = "<group>"; };
@@ -162,6 +163,7 @@
 		0174B3BA2CDFBA030069AB39 /* dayloom */ = {
 			isa = PBXGroup;
 			children = (
+				0194B98A2D1B2226009D4427 /* Info.plist */,
 				01D4FC5F2D17387700FF9C1E /* Networking */,
 				010413852CE161E000C8E541 /* Components */,
 				010413762CE1482600C8E541 /* ViewModels */,
@@ -549,6 +551,7 @@
 				DEVELOPMENT_TEAM = B49LQ49UB7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = dayloom/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = dayloom;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -581,6 +584,7 @@
 				DEVELOPMENT_TEAM = B49LQ49UB7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = dayloom/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = dayloom;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

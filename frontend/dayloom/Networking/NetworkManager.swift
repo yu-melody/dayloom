@@ -11,7 +11,9 @@ import Foundation
 class NetworkManager {
     static let shared = NetworkManager()
     private let baseURL = "https://fastapi-app-270357093577.us-east1.run.app"
+//    private let baseURL = "http://192.168.1.36:8000"
     lazy private var baseGratitudeURL = "\(baseURL)/gratitude"
+    lazy private var baseRoutineURL = "\(baseURL)/routines"
     
     // Fetch all entries
     // completion is the closure: it executes once the network request is complete.
@@ -49,7 +51,9 @@ class NetworkManager {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         do {
-            let body = try JSONEncoder().encode(entry)
+            let encoder = JSONEncoder()
+            encoder.dateEncodingStrategy = .iso8601 // Use ISO 8601 format for dates
+            let body = try encoder.encode(entry)
             request.httpBody = body
         } catch {
             print("Error encoding entry: \(error)")
@@ -72,7 +76,7 @@ class NetworkManager {
             completion(true)
         }.resume()
     }
-    
+
     // Update an entry
     func updateEntry(_ entry: GratitudeEntryModel, completion: @escaping (Bool) -> Void) {
         guard let url = URL(string: "\(baseGratitudeURL)/\(entry.id)") else { return }
@@ -81,7 +85,9 @@ class NetworkManager {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         do {
-            let body = try JSONEncoder().encode(entry)
+            let encoder = JSONEncoder()
+            encoder.dateEncodingStrategy = .iso8601 // Use ISO 8601 format for dates
+            let body = try encoder.encode(entry)
             request.httpBody = body
         } catch {
             print("Error encoding entry: \(error)")
@@ -89,7 +95,7 @@ class NetworkManager {
             return
         }
         
-        URLSession.shared.dataTask(with: request) {_, response, error in
+        URLSession.shared.dataTask(with: request) { _, response, error in
             if let error = error {
                 print("Error updating entry: \(error)")
                 completion(false)
@@ -125,5 +131,66 @@ class NetworkManager {
             
             completion(true)
         }.resume()
+    }
+    
+    func fetchRoutines(completion: @escaping ([RoutineModel]?) -> Void) {
+        guard let url = URL(string: "\(baseRoutineURL)/") else {
+            print("Invalid URL")
+            completion(nil)
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let data = data {
+                do {
+                    let decoder = JSONDecoder()
+                    decoder.dateDecodingStrategy = .iso8601
+                    let routines = try decoder.decode([RoutineModel].self, from: data) // Expecting an array
+                    completion(routines)
+                } catch {
+                    print("Error decoding routines: \(error)")
+                    completion(nil)
+                }
+            } else {
+                print("Error fetching routines: \(error?.localizedDescription ?? "Unknown error")")
+                completion(nil)
+            }
+        }
+        task.resume()
+    }
+
+    
+    // Update a routine
+    func updateRoutine(_ routine: RoutineModel, completion: @escaping (Bool) -> Void) {
+        guard let url = URL(string: "\(baseRoutineURL)/\(routine.id)") else { return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        do {
+            let encoder = JSONEncoder()
+            encoder.dateEncodingStrategy = .iso8601
+            request.httpBody = try encoder.encode(routine)
+            
+            URLSession.shared.dataTask(with: request) { _, response, error in
+                if let error = error {
+                    print("Error updating routine: \(error)")
+                    completion(false)
+                    return
+                }
+                
+                guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                    print("Failed to update routine")
+                    completion(false)
+                    return
+                }
+                
+                completion(true)
+            }.resume()
+        } catch {
+            print("Error encoding routine: \(error)")
+            completion(false)
+        }
     }
 }
