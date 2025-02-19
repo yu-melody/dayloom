@@ -1,11 +1,22 @@
-import Adafruit_DHT
+import adafruit_dht
+import board
 
-DHT_SENSOR = Adafruit_DHT.DHT22
-DHT_PIN = 4 
+# Use GPIO 4 (Pin 7) for data
+DHT_SENSOR = adafruit_dht.DHT22(board.D4)
 
 def get_humidity():
     """Reads humidity & temperature from the DHT22 sensor"""
-    humidity, temperature = Adafruit_DHT.read_retry(DHT_SENSOR, DHT_PIN)
-    if humidity is not None and temperature is not None:
-        return {"temperature": round(temperature, 1), "humidity": round(humidity, 1)}
-    return {"error": "Failed to retrieve data"}
+    try:
+        temperature = DHT_SENSOR.temperature
+        humidity = DHT_SENSOR.humidity
+
+        if humidity is not None and temperature is not None:
+            return {"temperature": round(temperature, 1), "humidity": round(humidity, 1)}
+        return {"error": "Failed to retrieve data"}
+
+    except RuntimeError as e:
+        return {"error": f"Reading from DHT sensor failed: {e}"}
+
+    finally:
+        DHT_SENSOR.exit()
+
