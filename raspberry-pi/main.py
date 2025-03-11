@@ -1,7 +1,19 @@
 from fastapi import FastAPI
 from api.routes import sensors, plugs
+from mqtt_client import start_mqtt_listener, DEVICE_STATES
 
 app = FastAPI(title="Raspberry Pi Smart Home API")
+
+
+# Start MQTT listener when the API starts
+start_mqtt_listener()
+
+@app.get("/status/{device}")
+def get_device_status(device: str):
+    """Fetch the current state of a device from cached MQTT messages."""
+    topic = f"zigbee2mqtt/{device}"
+    state = DEVICE_STATES.get(topic, "UNKNOWN")
+    return {"device": device, "state": state}
 
 # Include routes
 app.include_router(sensors.router, prefix="/sensors")
