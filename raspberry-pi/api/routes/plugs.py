@@ -1,55 +1,54 @@
 import json
-from fastapi import APIRouter
 import subprocess
+from fastapi import APIRouter
 
 router = APIRouter()
 
 # Device mapping for easy reference
-# from http://10.110.116.249:8080
 DEVICE_MAP = {
-    "lamp": "0x282c02bfffecf615",  # Replace with your actual device ID
+    "lamp": "0x282c02bfffecf615",
     "boiler": "0x282c02bfffee2361",
     "humidifier": "0x282c02bfffeca298"
 }
 
-def toggle_plug(device_id: str, state: str):
-    """Send MQTT command to Zigbee2MQTT to turn device on/off."""
+def send_mqtt_command(device_id: str, state: str):
+    """Send MQTT command to Zigbee2MQTT to set device state."""
     command = f'mosquitto_pub -h localhost -t zigbee2mqtt/{device_id}/set -m \'{{"state": "{state.upper()}"}}\''
     subprocess.run(command, shell=True)
 
 @router.post("/toggle/{device}")
 def toggle_device(device: str):
-    """Toggle a smart plug on/off."""
+    """Toggle a smart plug ON/OFF."""
     if device not in DEVICE_MAP:
         return {"error": "Invalid device name"}
     
-    toggle_plug(DEVICE_MAP[device], "TOGGLE")
+    send_mqtt_command(DEVICE_MAP[device], "TOGGLE")
     return {"status": f"Toggled {device}"}
 
 @router.post("/{device}/{state}")
 def control_device(device: str, state: str):
-    """Explicitly turn a device on or off."""
+    """Turn a device explicitly ON or OFF."""
     if device not in DEVICE_MAP:
         return {"error": "Invalid device name"}
     
     if state.lower() not in ["on", "off"]:
         return {"error": "Invalid state. Use 'on' or 'off'."}
     
-    toggle_plug(DEVICE_MAP[device], state)
+    send_mqtt_command(DEVICE_MAP[device], state)
     return {"status": f"Set {device} to {state.upper()}"}
 
 def get_device_status(device_id: str):
-    """Fetch the current state of a device using mosquitto_sub (blocking)."""
+    """Fetch the current state of a device using mosquitto_sub."""
     try:
-        command = f'mosquitto_sub -h localhost -t zigbee2mqtt/{device_id} -C 1'
+        command = f'mosquitto_sub -h localhost -t zigbee2mqtt/{device_id} -C 1 -v'
         output = subprocess.check_output(command, shell=True, timeout=3).decode().strip()
 
-        # Extract only the JSON part (ignore topic name)
-        parts = output.split(" ", 1)
-        json_payload = parts[1] if len(parts) > 1 else "{}"
+        # Extract JSON payload (ignore topic name)
+        parts = output.split("\n")[-1]  # Take the last line (in case of multi-line response)
+        topic, json_payload = parts.split(" ", 1) if " " in parts else ("", "{}")
 
         data = json.loads(json_payload)
-        return data.get("state", "UNKNOWN")  # Return state or "UNKNOWN" if missing
+        return {"device": device_id, "state": data.get("state", "UNKNOWN")}
 
     except subprocess.TimeoutExpired:
         return {"device": device_id, "state": "TIMEOUT"}
@@ -64,5 +63,4 @@ def device_status(device: str):
     if device not in DEVICE_MAP:
         return {"error": "Invalid device name"}
     
-    state = get_device_status(DEVICE_MAP[device])
-    return {"device": device, "state": state}
+    return get_device_status(DEVICE_MAP[device])
