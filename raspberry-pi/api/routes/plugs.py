@@ -40,12 +40,21 @@ def control_device(device: str, state: str):
 def get_device_status(device_id: str):
     """Fetch the current state of a device using mosquitto_sub."""
     try:
-        command = f'mosquitto_sub -h localhost -t zigbee2mqtt/{device_id} -C 1 -v'
+        # Check if FastAPI can execute mosquitto_sub
+        test_command = "mosquitto_sub --help"
+        test_output = subprocess.run(test_command, shell=True, capture_output=True, text=True)
+
+        if test_output.returncode != 0:
+            return {"error": "mosquitto_sub not accessible from FastAPI"}
+
+        # Run mosquitto_sub to fetch retained message
+        command = f'timeout 3 mosquitto_sub -h localhost -t zigbee2mqtt/{device_id} -C 1 -v'
         output = subprocess.check_output(command, shell=True, timeout=3).decode().strip()
 
-        # Extract JSON payload (ignore topic name)
-        parts = output.split("\n")[-1]  # Take the last line (in case of multi-line response)
-        topic, json_payload = parts.split(" ", 1) if " " in parts else ("", "{}")
+        print(f"DEBUG: mosquitto_sub output:\n{output}")  # ✅ Debug log
+
+        json_start = output.find("{")
+        json_payload = output[json_start:] if json_start != -1 else "{}"
 
         data = json.loads(json_payload)
         return {"device": device_id, "state": data.get("state", "UNKNOWN")}
