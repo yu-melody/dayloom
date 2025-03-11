@@ -42,11 +42,21 @@ def get_device_status(device_id: str):
     """Fetch the current state of a device using mosquitto_sub (blocking)."""
     try:
         command = f'mosquitto_sub -h localhost -t zigbee2mqtt/{device_id} -C 1'
-        output = subprocess.check_output(command, shell=True).decode().strip()
-        data = json.loads(output)
+        output = subprocess.check_output(command, shell=True, timeout=3).decode().strip()
+
+        # Extract only the JSON part (ignore topic name)
+        parts = output.split(" ", 1)
+        json_payload = parts[1] if len(parts) > 1 else "{}"
+
+        data = json.loads(json_payload)
         return data.get("state", "UNKNOWN")  # Return state or "UNKNOWN" if missing
+
+    except subprocess.TimeoutExpired:
+        return {"device": device_id, "state": "TIMEOUT"}
+    except json.JSONDecodeError:
+        return {"device": device_id, "state": "ERROR: Invalid JSON"}
     except Exception as e:
-        return f"Error: {str(e)}"
+        return {"device": device_id, "state": f"Error: {str(e)}"}
 
 @router.get("/status/{device}")
 def device_status(device: str):
