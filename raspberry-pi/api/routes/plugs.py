@@ -48,7 +48,7 @@ def get_device_status(device_id: str):
             return {"error": "mosquitto_sub not accessible from FastAPI"}
 
         # Run mosquitto_sub to fetch retained message
-        command = f'timeout 3 mosquitto_sub -h localhost -t zigbee2mqtt/{device_id} -C 1 -v'
+        command = f'sudo -u mmy67455 mosquitto_sub -h localhost -t zigbee2mqtt/{device_id} -C 1 -v'
         output = subprocess.check_output(command, shell=True, timeout=3).decode().strip()
 
         print(f"DEBUG: mosquitto_sub output:\n{output}")  # ✅ Debug log
